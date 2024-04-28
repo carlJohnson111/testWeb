@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页时钟</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 时钟主体内容 -->
+    <div class="hero">
+        <div class="container">
+            <!-- 先模拟一个时钟 -->
+            <div class="clock">
+                <span id="hour">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+            </div>
+        </div>
+    </div>
+
+<script>
+    //将时间赋值到<span>标签上
+    let hourS = document.getElementById("hour");
+    let minS = document.getElementById("min");
+    let secS = document.getElementById("sec");
+
+    
+   
+
+    // 最后新建一个方法让时间动起来
+    setInterval(()=>{
+        let nowTime = new Date();
+    
+        hourS.innerHTML = (nowTime.getHours()<10?"0":"") + nowTime.getHours();
+        minS.innerHTML = (nowTime.getMinutes()<10?"0":"") + nowTime.getMinutes();
+        secS.innerHTML = (nowTime.getSeconds()<10?"0":"") + nowTime.getSeconds();
+       
+    },1000)
+</script>
+</body>
+</html>
